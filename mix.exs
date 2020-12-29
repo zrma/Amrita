@@ -6,7 +6,15 @@ defmodule Amrita.MixProject do
       apps_path: "apps",
       version: "0.1.0",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      releases: [
+        amrita: [
+          applications: [
+            api: :permanent,
+            database: :permanent
+          ]
+        ]
+      ]
     ]
   end
 

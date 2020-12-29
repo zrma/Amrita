@@ -15,4 +15,16 @@ import Config
 #       level: :info,
 #       format: "$date $time [$level] $metadata$message\n",
 #       metadata: [:user_id]
-#
+
+config :logger, :console,
+  level: :info,
+  format: "$date $time [$level] $metadata$message\n",
+  metadata: [:user_id]
+
+config :api,
+  token: System.get_env("TOKEN")
+
+config :database,
+  endpoint: System.get_env("HOST"),
+  id: System.get_env("ID"),
+  pwd: System.get_env("PWD")
